@@ -1,10 +1,30 @@
+import { useState } from 'react'
 import './App.css'
+
+function Panel({Children, title}){
+  const [isActive, setIsActive] = useState(false);
+
+  return(
+    <>
+      <h3>{title}</h3>
+      {isActive? (<p>{Children}</p>) : (<button onClick={() => setIsActive(true)}>Afficher</button>)}
+    </>
+  )
+}
 
 function App() {
 
   return (
     <>
-      <h1>Test réussir merci beaucoup, étape suivantes.</h1>
+      <h2>Almaty, Kazakhstan</h2>
+      <Panel title="Apropos">
+        Avec une population d'environ 2 millions d'habitants, Almaty est la plus grande ville du Kazakhstan. Elle en était la capitale 1929 à 1997.
+        With a population of about 2 million, Almaty is Kazakhstan's largest city. From 1929 to 1997, it was its capital city.
+      </Panel>
+      <Panel title="Etymologie">
+        Avec une population d'environ 2 millions d'habitants, Almaty est la plus grande ville du Kazakhstan. Elle en était la capitale 1929 à 1997.
+        With a population of about 2 million, Almaty is Kazakhstan's largest city. From 1929 to 1997, it was its capital city.
+      </Panel>
     </>
   )
 }
