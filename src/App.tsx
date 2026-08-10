@@ -1,7 +1,6 @@
 import { useState } from 'react'
-import './App.css'
 
-function Panel({Children, title}){
+function Panel({ Children, title }){
   const [isActive, setIsActive] = useState(false);
 
   return(
@@ -9,7 +8,7 @@ function Panel({Children, title}){
       <h3>{title}</h3>
       {isActive? (<p>{Children}</p>) : (<button onClick={() => setIsActive(true)}>Afficher</button>)}
     </>
-  )
+  );
 }
 
 function App() {
@@ -17,7 +16,7 @@ function App() {
   return (
     <>
       <h2>Almaty, Kazakhstan</h2>
-      <Panel title="Apropos">
+      <Panel title="A propos">
         Avec une population d'environ 2 millions d'habitants, Almaty est la plus grande ville du Kazakhstan. Elle en était la capitale 1929 à 1997.
         With a population of about 2 million, Almaty is Kazakhstan's largest city. From 1929 to 1997, it was its capital city.
       </Panel>
@@ -26,7 +25,7 @@ function App() {
         With a population of about 2 million, Almaty is Kazakhstan's largest city. From 1929 to 1997, it was its capital city.
       </Panel>
     </>
-  )
+  );
 }
 
 export default App
